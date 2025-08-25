@@ -1,27 +1,42 @@
-# student-query-autoresponder
-Student Query Autoresponder (n8n Workflow) An automation workflow built with n8n to handle student queries from Google Forms → Google Sheets → Gmail.  Fetches new queries only  Maps issues to exam guidelines  Generates structured replies  Sends automated responses via Gmail.
-# Student Query Auto-Responder (n8n Workflow)
+# 📧 Automated Student Query Responder (n8n Workflow)
 
-This project automates handling of student queries using **n8n**.  
-It fetches queries submitted via Google Forms, processes them against predefined exam guidelines, and sends structured email responses automatically.
+This repository contains an **n8n workflow** that automates student query responses via Google Forms, Google Sheets, and Gmail.
 
-## 🔄 Workflow Steps
-1. **Google Form** → Student submits their query.  
-2. **Google Sheet (Get Row(s))** → Fetches query details.  
-3. **Merge Node** → Combines query with response guidelines.  
-4. **Function Node** → Classifies query type, applies rules, generates reply.  
-5. **Gmail Node** → Sends structured auto-response to the student.  
+## 🚀 Workflow Overview
+1. **Google Form** – Students submit their queries.
+2. **Google Sheets Trigger** – Captures new responses automatically.
+3. **(Optional) Get Row(s) Node** – Fetches additional sheet data.
+4. **Merge Node** – Combines query data with guidelines/responses.
+5. **Function (Code) Node** – Categorizes query, generates structured response, ensures email validity.
+6. **Gmail Node** – Sends the auto-generated reply email to the student.
 
-## 🚀 Features
-- Prevents duplicate emails (only one mail per student).  
-- Categorizes queries (Termination, Technical, Submission, Code/Test, Marks, Interview, General).  
-- Uses exam guidelines for accurate, rule-based replies.  
-- Sends clean, structured email templates.  
+## 🛠️ Features
+- Prevents duplicate email sends.
+- Maps issues (termination, submission, technical, etc.) to predefined responses.
+- Sends **structured HTML emails** with candidate details.
+- Supports future extensibility for new query types.
 
-## 📂 Files
-- `workflowsstudent-query-autoresponder.json` → The n8n workflow file (can be imported into your n8n instance).  
+## 📂 Repository Structure
+```
+student-query-autoresponder/
+│
+├── workflows/
+│   └── workflowsstudent-query-autoresponder.json
+│
+├── README.md
+└── .gitignore
+```
 
-## 🛠️ Setup
+## ⚡ How to Use
 1. Clone this repo:
    ```bash
-   git clone https://github.com/divyasisss/student-query-autoresponder.git
+   git clone https://github.com/YOUR_USERNAME/student-query-autoresponder.git
+   ```
+2. Open **n8n**.
+3. Go to **Import workflow** → upload `workflows/workflowsstudent-query-autoresponder.json`.
+4. Set up credentials:
+   - Google Sheets
+   - Gmail
+5. Activate the workflow.
+
+---
